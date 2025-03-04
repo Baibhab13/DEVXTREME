@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Symptom Checker</title>
+    <h1 id="chatbot-heading">Symptom Checker</h1>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #4CAF50, #2196F3);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Header */
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Chatbot Container */
+.chat-container {
+    width: 90%;
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Messages Box */
+.messages {
+    height: 350px;
+    overflow-y: auto;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual Message */
+.messages div {
+    max-width: 75%;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+.user {
+    background: #4caf50;
+    align-self: flex-end;
+    color: white;
+}
+
+.bot {
+    background: #2196f3;
+    align-self: flex-start;
+    color: white;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+    font-size: 12px;
+    color: #ddd;
+    display: none;
+}
+
+/* Input Container */
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Send Button */
+button {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background: #e68900;
+    transform: scale(1.05);
+}
+
+/* Scrollbar Styling */
+.messages::-webkit-scrollbar {
+    width: 5px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 10px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .chat-container {
+        width: 95%;
+    }
+}
+    </style>
+    <title>Advanced Chatbot</title>
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="messages" id="messageContainer">
+        <!-- Messages will appear here -->
+    </div>
+    <div class="typing-indicator" id="typingIndicator">Bot is typing...</div>
+    <div class="spinner" id="spinner"></div>
+    <div class="input-container">
+        <input type="text" placeholder="Type a message..." id="messageInput" />
+        <button onclick="sendMessege()">Send</button>
+    </div>
+</div>
+
+<script>
+    const messageContainer = document.getElementById('messageContainer');
+    const messageInput = document.getElementById('messageInput');
+    const typingIndicator = document.getElementById('typingIndicator');
+    const spinner = document.getElementById('spinner');
+
+    messageInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            const messageText = messageInput.value.trim();
+            if (messageText) {
+                addMessage(messageText, 'user');
+                messageInput.value = '';
+                showSpinner();
+                if (messageText.toLowerCase().startsWith('generate image')) {
+                    fetchImageFromAPI(messageText);
+                } else {
+                    fetchResponseFromAPI(messageText);
+                }
+            }
+        }
+    });
+
+    function addMessage(text, sender) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message', sender === 'bot' ? 'bot-message' : 'user-message');
+
+        // For smooth animation
+        messageElement.style.transform = 'scale(0)';
+        setTimeout(() => {
+            messageElement.style.transform = 'scale(1)';
+        }, 50);
+
+        messageElement.textContent = text;
+        messageContainer.appendChild(messageElement);
+        messageContainer.scrollTop = messageContainer.scrollHeight;
+    }
+
+    function addImageMessage(imageUrl) {
+        const imageElement = document.createElement('img');
+        imageElement.src = imageUrl;
+        imageElement.classList.add('image-message');
+
+        // For smooth animation
+        imageElement.style.transform = 'scale(0)';
+        setTimeout(() => {
+            imageElement.style.transform = 'scale(1)';
+        }, 50);
+
+        messageContainer.appendChild(imageElement);
+        messageContainer.scrollTop = messageContainer.scrollHeight;
+    }
+
+    function showTypingIndicator() {
+        typingIndicator.style.display = 'block';
+    }
+
+    function hideTypingIndicator() {
+        typingIndicator.style.display = 'none';
+    }
+
+    function showSpinner() {
+        spinner.style.display = 'block';
+    }
+
+    function hideSpinner() {
+        spinner.style.display = 'none';
+    }
+
+    function fetchResponseFromAPI(message) {
+        const apiEndpoint = "https://backend.buildpicoapps.com/aero/run/llm-api?pk=v1-Z0FBQUFBQm51THc0Q2RCdjM3OFE2Sm4xQ2Zabk1paEJlSm5yRWltOHF4YkxwWUxmSjVPc1JZbFRxUUVoZG8zREhWaC1sUDUzSkVUVTdaaThxNVRmaHhhQVJEUXo4RVdCWkE9PQ==";
+        const requestData = {
+            prompt: message
+        };
+
+        fetch(apiEndpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            hideSpinner();
+            if (data.status === 'success') {
+                addMessage(data.text, 'bot');
+            } else {
+                console.error("Error in API response: ", data);
+                addMessage("Oops! Something went wrong.", 'bot');
+            }
+        })
+        .catch(error => {
+            hideSpinner();
+            console.error("Error: ", error);
+            addMessage("Error connecting to the service.", 'bot');
+        });
+    }
+
+    function fetchImageFromAPI(message) {
+        const apiEndpoint = "https://backend.buildpicoapps.com/aero/run/image-generation-api?pk=v1-Z0FBQUFBQm51THhjRldBd3k0NFUyM2ZJYWcyMXhYeHBsM3R6amFpVDJMTXBxdmExZmdZTU9jOW03V0hSWUw2WDNoSXJ0YzVxQTl4eVRyUU9lQXVZTzMyOENhS2UtQTVoZVE9PQ==";
+        const requestData = {
+            prompt: message.replace("generate image", "").trim()
+        };
+
+        fetch(apiEndpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            hideSpinner();
+            if (data.status === 'success') {
+                addImageMessage(data.imageUrl);
+            } else {
+                console.error("Error in API response: ", data);
+                addMessage("Failed to generate image. Please try again.", 'bot');
+            }
+        })
+        .catch(error => {
+            hideSpinner();
+            console.error("Error: ", error);
+            addMessage("Error connecting to the image generation service.", 'bot');
+        });
+    }
+</script>
+
+</body>
+</html
