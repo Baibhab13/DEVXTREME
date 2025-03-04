@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer Profile Page</title>
+    <link rel="stylesheet" href="conAcc.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <a href="consumer">Back to Home</a>
+            <a href="confarm">Connect farmers</a>
+            <a href="season">Seasonal products</a>
+            <a href="emp">Employment opportunity</a>
+            <a href="help">Customer Support</a>
+            <a href="conchart">Chart</a>
+        </div>
+        <div class="profile-content">
+            <div class="profile-header">
+                <img src="images/rakesh.webp" alt="Profile Picture" width="80" height="80">
+                <div>
+                    <h2 id="name">{{name}}</h2>  <!-- Name is NOT Editable -->
+                    <p id="role">{{role}}</p>
+                    <p>GANJAM</p>
+                </div>
+            </div>
+
+            <!-- Personal Information -->
+            <div class="profile-section">
+                <h3>Personal Information</h3>
+                <div class="info">
+                    <div>
+                        <p><strong>Name:</strong> <span id="edit-name">{{name}}</span></p> <!-- Not Editable -->
+                        <p><strong>Date of Birth:</strong> <span id="edit-dob">15-06-1988</span></p>
+                    </div>
+                    <div>
+                        <p><strong>Email Address:</strong> <span id="edit-email">rajesh.kumar@gmail.com</span></p>
+                        <p><strong>Phone Number:</strong> <span id="edit-phone">{{phoneNumber}}</span></p> <!-- Not Editable -->
+                    </div>
+                </div>
+                <button class="edit-button" onclick="toggleEdit('personal')">Edit</button>
+            </div>
+
+            <!-- Address Details -->
+            <div class="profile-section">
+                <h3>Address Details</h3>
+                <div class="info">
+                    <div>
+                        <p><strong>Street:</strong> <span id="edit-street">789 Consumer Lane</span></p>
+                        <p><strong>City:</strong> <span id="edit-city">GANJAM</span></p>
+                    </div>
+                    <div>
+                        <p><strong>State:</strong> <span id="edit-state">ODISHA</span></p>
+                        <p><strong>Postal Code:</strong> <span id="edit-postal">761003</span></p>
+                    </div>
+                    <div>
+                        <p><strong>Country:</strong> <span id="edit-country">India</span></p>
+                    </div>
+                </div>
+                <button class="edit-button" onclick="toggleEdit('address')">Edit</button>
+            </div>
+
+            <!-- Order History -->
+            <div class="profile-section">
+                <h3>Order History</h3>
+                <div class="info">
+                    <p>Order #1 - Delivered on 01-03-2025</p>
+                    <p>Order #2 - In Transit</p>
+                </div>
+            </div>
+
+            <!-- Wish List -->
+            <div class="profile-section">
+                <h3>Wish List</h3>
+                <div class="info">
+                    <p>Product A</p>
+                    <p>Product B</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleEdit(section) {
+            let fields = [];
+
+            if (section === "personal") {
+                fields = ["edit-dob", "edit-email"];  // Phone number and Name are excluded
+            } else if (section === "address") {
+                fields = ["edit-street", "edit-city", "edit-state", "edit-postal", "edit-country"];
+            }
+
+            const button = event.target;
+            const isEditing = button.textContent === "Save";
+
+            fields.forEach(id => {
+                let span = document.getElementById(id);
+                if (!isEditing) {
+                    let value = span.innerText;
+                    span.innerHTML = `<input type="text" value="${value}">`;
+                } else {
+                    let input = span.querySelector("input");
+                    span.innerText = input.value;
+                }
+            });
+
+            button.textContent = isEditing ? "Edit" : "Save";
+        }
+    </script>
+</body>
+</html>

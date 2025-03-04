@@ -1,0 +1,100 @@
+body{
+    overflow-x:hidden;
+}
+footer {
+    color: #fff;
+    background: rgb(47, 48, 48);
+    padding: 50px 20px;
+}
+
+footer .top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer .top div {
+    padding: 10px;
+    min-width: 250px;
+    flex: 1;
+}
+
+footer .top div:first-child i {
+    color: #00bfa5;
+    margin-right: 10px;
+}
+
+footer .top div:first-child p {
+    margin: 10px 0;
+}
+
+footer .top div:first-child input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+footer .top div:first-child input[type="text"] {
+    border-radius: 20px 0 0 20px;
+}
+
+footer .top div:first-child input[type="button"] {
+    border-radius: 0 20px 20px 0;
+    background: #008c7a;
+    color: #fff;
+}
+
+footer .top div:nth-child(2) {
+    display: inline;
+}
+
+footer .top div:nth-child(3) section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+footer .top div:nth-child(3) img {
+    width: 120px;
+}
+
+footer .top h3 {
+    margin-bottom: 30px;
+}
+
+footer hr {
+    margin: 40px 0;
+}
+
+footer ul {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer ul li {
+    list-style: none;
+    margin-right: 20px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Responsive Footer Styles */
+@media (max-width: 768px) {
+    footer .top {
+        flex-direction: column;
+    }
+
+    footer .top div {
+        min-width: 100%;
+    }
+
+    footer .top div:nth-child(3) section {
+        grid-template-columns: 1fr;
+    }
+}

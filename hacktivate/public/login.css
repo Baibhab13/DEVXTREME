@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: #eeee;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    width: 70vw;
+    height: 80vh;
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+    /* box-shadow: 0 5px 15px  black; */
+}
+
+.container .aside{
+    width: 40%;
+    background: #fff;
+}
+
+
+.container .main{
+    width: 60%;
+    background-image: url(images/pexels-iamtausifhossain9321-1226302.jpg);
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(100px);    
+}
+.container .main .blur{
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container .main form input{
+    width: 400px;
+    display: block;
+    margin: 20px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    padding-left: 15px;
+    border-radius: 10px 10px 0 10px;
+
+}
+
+.container .main form{
+    background: #ffffff89;
+    border-radius: 5% 0 5% 0;
+    padding: 30px 0;
+}
+
+.container .main form p{
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 30px;
+    text-shadow:  0 0 2px rgba(0, 0, 0, 0.616);
+}
+
+select{
+    margin: 0 30px;
+    width: 50%;
+    font-size: 16px;
+    padding: 2px;
+    outline: none;
+}
+.container .main form span{
+    display: block;
+    text-align: right;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.container form input[type = "submit"] {
+    background: #017d03;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.49);
+    color: #fff;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+form small{
+    margin: 20px;
+    color: #fff;
+    font-size: 16px;
+}
+
+form small a{
+    color: #017d03;
+}
+
+.container .aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    text-align: left;
+}
+
+.container .aside h1{
+    color: #017d03;
+    margin: 30px 0;
+}
+
+.container .aside .trueclller{
+    width: 100%;
+    height: 40px;
+    margin: 30px 0;
+    background: #017d03;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #eee;
+
+}
+
+.container .aside .trueclller img{
+    height: 80%;
+    margin: 10px;
+}
+
+@media (max-width : 1000px) {
+    .container{
+        width: 95%;
+    }
+}
+
+@media (max-width : 750px) {
+    .container{
+        width: 95%;
+    }
+
+    .container form{
+        scale: .8;
+    }
+}
+
+@media (max-width : 600px) {
+    .container{
+        margin: 30px 0;
+        height: auto;
+        width: 95%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container .main{
+        width: 90%;
+    }
+
+    .container .main form input{
+        width: 90%;
+    }
+    .container .aside{
+        width: 90%;
+    }
+
+}

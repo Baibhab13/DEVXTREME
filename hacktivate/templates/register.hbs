@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="login.css"> <!-- Use the same CSS as login.hbs -->
+</head>
+
+<body>
+    <div class="container">
+        <div class="aside">
+            <h1>Welcome!</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, accusantium molestias? Quasi error
+                officia sint esse rerum soluta a doloribus aspernatur.</p>
+            <div class="trueclller">
+                <img src="images/truecaller.png" alt="">
+                Login with truecaller
+            </div>
+        </div>
+        <div class="main">
+            <div class="blur">
+                <form action="/register" method="POST">
+                    <p>Please enter your registration details</p>
+
+                    <!-- Role Selection Dropdown -->
+                    <select name="role" id="role" required>
+                        <option value="" disabled selected>Select Role</option>
+                        <option value="farmer">Farmer</option>
+                        <option value="consumer">Consumer</option>
+                    </select>
+
+                    <!-- Name Input -->
+                    <input type="text" placeholder="Enter Full Name" name="name" required>
+
+                    <!-- Phone Number Input -->
+                    <input type="text" placeholder="Enter Phone Number" name="phoneNumber" required>
+
+                    <!-- Password Input -->
+                    <input type="password" placeholder="Enter Password" name="password" required>
+
+                    <!-- Submit Button -->
+                    <input type="submit" value="Register">
+
+                    <!-- Link to Login Page -->
+                    <small>Already have an account? <a href="login">Log in</a></small>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

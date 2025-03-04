@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <a href="farmer">Back to home</a>
+            <a href="inv">Inventory and supplies</a>
+            <a href="#">Community</a>
+            <a href="scheme">Schemes</a>
+            <a href="commerce">Marketplace</a>
+            <a href="vendor">Vendor Management</a>
+            <a href="rider">Transport Management</a>
+            <a href="#">Weather</a>
+            <a href="farmchart">Chart</a>
+        </div>
+        <div class="profile-content">
+            <div class="profile-header">
+                <img src="images/farmer.jpg" alt="Profile Picture" width="80" height="80">
+                <div>
+                    <h2>{{name}}</h2> <!-- Dynamic name -->
+                    <p>{{role}}</p> <!-- Dynamic role -->
+                    <p>SITALAPLI</p>
+                </div>
+            </div>
+            <div class="profile-section">
+                <h3>Personal Information</h3>
+                <div class="info">
+                    <div>
+                        <p><strong>Name:</strong> {{name}}</p> <!-- Dynamic name -->
+                        <p><strong>Date of Birth:</strong> 12-10-1990</p>
+                    </div>
+                    <div>
+                        <p><strong>Email Address:</strong> ramlal@.com</p>
+                        <p><strong>Phone Number:</strong> {{phoneNumber}}</p> <!-- Dynamic phone number -->
+                    </div>
+                </div>
+                <button class="edit-button" onclick="showAlert()">Edit</button>
+            </div>
+            <div class="profile-section">
+                <h3>Address Details</h3>
+                <div class="info">
+                    <div>
+                        <p><strong>Street:</strong> 123 Street</p>
+                        <p><strong>City:</strong> BAM</p>
+                    </div>
+                    <div>
+                        <p><strong>State:</strong> ODISHA</p>
+                        <p><strong>Postal Code:</strong> 761003</p>
+                    </div>
+                    <div>
+                        <p><strong>Country:</strong> INDIA</p>
+                    </div>
+                </div>
+                <button class="edit-button" onclick="showAlert()">Edit</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

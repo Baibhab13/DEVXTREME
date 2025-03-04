@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Medicines Inventory</title>
+    <link rel="stylesheet" href="inv.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=account_circle" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="deskNav">
+            <div>
+                <img src="/images/logo.png" alt="" height="80">
+            </div>
+            <div>
+                <form action="">
+                    <input type="search" name="" id="" placeholder="Search anything">
+                </form>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="register" id="register-link">Register</a></li>
+                    <li><a href="login" id="login-link">Log in</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn" id="services-btn">Services</button>
+                            <div class="dropdown-content">
+                                <a href="help" id="help-link">Help</a>
+                                <a href="scheme" id="scheme-link">Schemes</a>
+                                <a href="#" id="about-link">About</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="account"><span class="material-symbols-outlined">
+                                account_circle
+                            </span></a></li>
+                    <!-- Language Dropdown -->
+                    <li>
+                        <div class="dropdown">
+                            <select id="language" onchange="changeLanguage()">
+                                <option value="en">English</option>
+                                <option value="hi">हिंदी</option>
+                                <option value="or">ଓଡ଼ିଆ</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <nav class="mobNav">
+            <div class="/images/logo">
+                <i class="fa-solid fa-bars navIcon"></i>
+                <a href="account"><span class="material-symbols-outlined">
+                        account_circle
+                    </span></a>
+            </div>
+            <div class="list closeNav">
+                <ul>
+                    <li><a href="register" id="register-link-mobile">Register</a></li>
+                    <li><a href="login" id="login-link-mobile">Log in</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn" id="services-btn-mobile">Services</button>
+                            <div class="dropdown-content">
+                                <a href="help" id="help-link-mobile">Help</a>
+                                <a href="scheme" id="scheme-link-mobile">Schemes</a>
+                                <a href="#" id="about-link-mobile">About</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Language Dropdown for Mobile -->
+                    <li>
+                        <select id="language-mobile" onchange="changeLanguage()">
+                            <option value="en">English</option>
+                            <option value="hi">हिंदी</option>
+                            <option value="or">ଓଡ଼ିଆ</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="slider">
+            <div class="slider-track">
+                <div class="slide"><img src="images/cslide2.jpg" alt="Image 2"></div>
+                <div class="slide"><img src="images/cslide1.jpg" alt="Image 1"></div>
+                <div class="slide"><img src="images/cslide3.jpg" alt="Image 3"></div>
+                <div class="slide"><img src="images/cslide4.jpg" alt="Image 4"></div>
+                <div class="slide"><img src="images/cslide5.jpg" alt="Image 5"></div>
+                <div class="slide"><img src="images/cslide1.jpg" alt="Image 1"></div>
+            </div>
+        </div>
+    </main>
+
+    <div class="scroll-container">
+        <div class="container">
+            <div class="card">
+                <img src="images/fung.jpg" alt="Fungicide">
+                <h3 id="fungicide-title">Fungicide</h3>
+                <p id="fungicide-desc">Effective fungicides to control and prevent fungal diseases in crops. Available
+                    in various formulations.</p>
+                <p>Added Jan 15, 2022</p>
+                <button>BUY NOW</button>
+                <a href="">Learn More</a>
+            </div>
+            <div class="card">
+                <img src="images/insec.webp" alt="Insecticide">
+                <h3 id="insecticide-title">Insecticide</h3>
+                <p id="insecticide-desc">Powerful insecticides to protect crops from pests and insects. Ensures healthy
+                    crop growth.</p>
+                <p>Added Mar 10, 2022</p>
+                <button>BUY NOW</button>
+                <a href="">Learn More</a>
+            </div>
+            <div class="card">
+                <img src="images/herb.jpg" alt="Herbicide">
+                <h3 id="herbicide-title">Herbicide</h3>
+                <p id="herbicide-desc">Herbicides for effective weed control, enhancing crop yield and productivity.</p>
+                <p>Added Apr 18, 2022</p>
+                <button>BUY NOW</button>
+                <a href="">Learn More</a>
+            </div>
+            <div class="card">
+                <img src="images/grow.webp" alt="Growth Regulator">
+                <h3 id="growth-regulator-title">Growth Regulators</h3>
+                <p id="growth-regulator-desc">Plant growth regulators to manage crop growth, flowering, and fruiting for
+                    better yields.</p>
+                <p>Added May 22, 2022</p>
+                <button>BUY NOW</button>
+                <a href="">Learn More</a>
+            </div>
+            <div class="card">
+                <img src="images/nutr.jpg" alt="Nutrient Solution">
+                <h3 id="nutrient-solution-title">Nutrient Solutions</h3>
+                <p id="nutrient-solution-desc">Nutrient-rich solutions to boost plant health and ensure optimal growth
+                    and development.</p>
+                <p>Added Jun 30, 2022</p>
+                <button>BUY NOW</button>
+                <a href="">Learn More</a>
+            </div>
+            <div class="card">
+                <img src="images/bio.jpg" alt="Biopesticide">
+                <h3 id="biopesticide-title">Biopesticides</h3>
+                <p id="biopesticide-desc">Eco-friendly biopesticides for safe and sustainable pest management.</p>
+                <p>Added Aug 12, 2022</p>
+                <button>BUY NOW</button>
+                <a href="">Learn More</a>
+            </div>
+            <div class="card">
+                <img src="images/pesticide.jpg" alt="Pesticide">
+                <h3 id="pesticide-title">Pesticides</h3>
+                <p id="pesticide-desc">Broad-spectrum pesticides to protect crops from a wide range of pests and
+                    diseases.</p>
+                <p>Added Sep 08, 2022</p>
+                <button>BUY NOW</button>
+                <a href="">Learn More</a>
+            </div>
+            <div class="card">
+                <img src="images/soil.jpg" alt="Soil Amendment">
+                <h3 id="soil-amendment-title">Soil Amendments</h3>
+                <p id="soil-amendment-desc">Soil amendments to improve soil structure, fertility, and overall crop
+                    performance.</p>
+                <p>Added Oct 25, 2022</p>
+                <button>BUY NOW</button>
+                <a href="">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="top">
+            <div>
+                <h3 id="about-us-title">About Us</h3>
+                <p id="about-us-desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum enim deserunt sunt ea quos
+                    eaque, mollitia numquam esse beatae similique consequatur facere nisi aperiam cum, deleniti sed
+                    sapiente, minus dolores?
+                </p>
+                <p><i class="fa-solid fa-phone"></i><span>+91 0000000000</span></p>
+                <p><i class="fa-solid fa-envelope"></i>info@gmail.com</p>
+                <input type="text" placeholder="Enter Your Email"><input type="button" value="Send">
+            </div>
+            <div>
+                <h3 id="latest-tweet-title">Latest Tweet</h3>
+                <ol>
+                    <li>
+                        <p id="tweet1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed earum provident
+                            praesentium debitis laboriosam aliquid.</p>
+                    </li><br>
+                    <li>
+                        <p id="tweet2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed earum provident
+                            praesentium debitis laboriosam aliquid.</p>
+                    </li><br>
+                    <li>
+                        <p id="tweet3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed earum provident
+                            praesentium debitis laboriosam aliquid.</p>
+                    </li>
+                </ol>
+            </div>
+            <div>
+                <h3 id="memory-title">Memory</h3>
+                <section>
+                    <img src="images/1.jpg" alt="">
+                    <img src="images/2.jpg" alt="">
+                    <img src="images/5.jpg" alt="">
+                    <img src="images/4.jpg" alt="">
+                </section>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <ul>
+                <li><a href="register.html" id="footer-register-link">Register</a></li>
+                <li><a href="login.html" id="footer-login-link">Log in</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                registerLink: "Register",
+                loginLink: "Log in",
+                servicesBtn: "Services",
+                helpLink: "Help",
+                schemeLink: "Schemes",
+                aboutLink: "About",
+                fungicideTitle: "Fungicide",
+                fungicideDesc: "Effective fungicides to control and prevent fungal diseases in crops. Available in various formulations.",
+                insecticideTitle: "Insecticide",
+                insecticideDesc: "Powerful insecticides to protect crops from pests and insects. Ensures healthy crop growth.",
+                herbicideTitle: "Herbicide",
+                herbicideDesc: "Herbicides for effective weed control, enhancing crop yield and productivity.",
+                growthRegulatorTitle: "Growth Regulators",
+                growthRegulatorDesc: "Plant growth regulators to manage crop growth, flowering, and fruiting for better yields.",
+                nutrientSolutionTitle: "Nutrient Solutions",
+                nutrientSolutionDesc: "Nutrient-rich solutions to boost plant health and ensure optimal growth and development.",
+                biopesticideTitle: "Biopesticides",
+                biopesticideDesc: "Eco-friendly biopesticides for safe and sustainable pest management.",
+                pesticideTitle: "Pesticides",
+                pesticideDesc: "Broad-spectrum pesticides to protect crops from a wide range of pests and diseases.",
+                soilAmendmentTitle: "Soil Amendments",
+                soilAmendmentDesc: "Soil amendments to improve soil structure, fertility, and overall crop performance.",
+                aboutUsTitle: "About Us",
+                aboutUsDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum enim deserunt sunt ea quos eaque, mollitia numquam esse beatae similique consequatur facere nisi aperiam cum, deleniti sed sapiente, minus dolores?",
+                latestTweetTitle: "Latest Tweet",
+                tweet1: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed earum provident praesentium debitis laboriosam aliquid.",
+                tweet2: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed earum provident praesentium debitis laboriosam aliquid.",
+                tweet3: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed earum provident praesentium debitis laboriosam aliquid.",
+                memoryTitle: "Memory",
+                footerRegisterLink: "Register",
+                footerLoginLink: "Log in",
+            },
+            hi: {
+                registerLink: "पंजीकरण करें",
+                loginLink: "लॉग इन करें",
+                servicesBtn: "सेवाएं",
+                helpLink: "सहायता",
+                schemeLink: "योजनाएं",
+                aboutLink: "हमारे बारे में",
+                fungicideTitle: "फंगीसाइड",
+                fungicideDesc: "फसलों में फंगल रोगों को नियंत्रित और रोकने के लिए प्रभावी फंगीसाइड। विभिन्न फॉर्मूलेशन में उपलब्ध।",
+                insecticideTitle: "कीटनाशक",
+                insecticideDesc: "फसलों को कीटों और कीड़ों से बचाने के लिए शक्तिशाली कीटनाशक। स्वस्थ फसल विकास सुनिश्चित करता है।",
+                herbicideTitle: "हर्बिसाइड",
+                herbicideDesc: "फसल उत्पादकता बढ़ाने के लिए प्रभावी खरपतवार नियंत्रण के लिए हर्बिसाइड।",
+                growthRegulatorTitle: "विकास नियामक",
+                growthRegulatorDesc: "बेहतर उपज के लिए फसल विकास, फूल और फल को प्रबंधित करने के लिए पौध विकास नियामक।",
+                nutrientSolutionTitle: "पोषक तत्व समाधान",
+                nutrientSolutionDesc: "पौधों के स्वास्थ्य को बढ़ावा देने और इष्टतम विकास सुनिश्चित करने के लिए पोषक तत्वों से भरपूर समाधान।",
+                biopesticideTitle: "जैव कीटनाशक",
+                biopesticideDesc: "सुरक्षित और टिकाऊ कीट प्रबंधन के लिए पर्यावरण के अनुकूल जैव कीटनाशक।",
+                pesticideTitle: "कीटनाशक",
+                pesticideDesc: "व्यापक स्पेक्ट्रम कीटनाशक जो फसलों को विभिन्न प्रकार के कीटों और रोगों से बचाते हैं।",
+                soilAmendmentTitle: "मृदा संशोधन",
+                soilAmendmentDesc: "मृदा संरचना, उर्वरता और समग्र फसल प्रदर्शन में सुधार के लिए मृदा संशोधन।",
+                aboutUsTitle: "हमारे बारे में",
+                aboutUsDesc: "लोरेम इप्सम डोलर सिट अमेट कंसेक्टेटुर एडिपिसिसिंग एलिट। वोलुप्टेटम एनिम डेसेरुंट सुन्त ए क्वोस ईक्वे, मोलिटिया नुमक्वाम एसे बेटे सिमिलिक कंसेक्वेटुर फेसर निसी एपेरियम कम, डेलेनिटी सेड सपिएंटे, मिनस डोलोरेस?",
+                latestTweetTitle: "नवीनतम ट्वीट",
+                tweet1: "लोरेम इप्सम डोलर सिट अमेट कंसेक्टेटुर एडिपिसिसिंग एलिट। सेड एरम प्रोविडेंट प्रेसेंटियम डेबिटिस लेबोरियोसम एलिक्विड।",
+                tweet2: "लोरेम इप्सम डोलर सिट अमेट कंसेक्टेटुर एडिपिसिसिंग एलिट। सेड एरम प्रोविडेंट प्रेसेंटियम डेबिटिस लेबोरियोसम एलिक्विड।",
+                tweet3: "लोरेम इप्सम डोलर सिट अमेट कंसेक्टेटुर एडिपिसिसिंग एलिट। सेड एरम प्रोविडेंट प्रेसेंटियम डेबिटिस लेबोरियोसम एलिक्विड।",
+                memoryTitle: "यादें",
+                footerRegisterLink: "पंजीकरण करें",
+                footerLoginLink: "लॉग इन करें",
+            },
+            or: {
+                registerLink: "ପଞ୍ଜିକରଣ",
+                loginLink: "ଲଗ୍ଇନ",
+                servicesBtn: "ସେବା",
+                helpLink: "ସହଯୋଗ",
+                schemeLink: "ଯୋଜନା",
+                aboutLink: "ଅମ୍ଭେ ବିଷୟରେ",
+                fungicideTitle: "ଫଂଗିସାଇଡ୍",
+                fungicideDesc: "ଫସଲରେ ଫଂଗସ୍ ରୋଗ ରୋକିବା ଏବଂ ନିୟନ୍ତ୍ରଣ କରିବା ପାଇଁ ପ୍ରଭାବଶାଳୀ ଫଂଗିସାଇଡ୍। ବିଭିନ୍ନ ଆକାରରେ ଉପଲବ୍ଧ।",
+                insecticideTitle: "କୀଟନାଶକ",
+                insecticideDesc: "ପକ୍ଷୀପ୍ରଭାବକୁ ରୋକିବା ଏବଂ ଫସଲ ସୁସ୍ଥ ରଖିବା ପାଇଁ ପ୍ରଭାବଶାଳୀ କୀଟନାଶକ।",
+                herbicideTitle: "ହର୍ବିସାଇଡ୍",
+                herbicideDesc: "ଫସଲ ଉତ୍ପାଦନକୁ ବୃଦ୍ଧି କରିବା ପାଇଁ ପ୍ରଭାବଶାଳୀ ଜମି ନିୟନ୍ତ୍ରଣ।",
+                growthRegulatorTitle: "ବୃଦ୍ଧି ନିୟନ୍ତ୍ରକ",
+                growthRegulatorDesc: "ଉତ୍ପାଦନ ବଢ଼ାଇବା ପାଇଁ ଫସଲ ବୃଦ୍ଧି, ଫୁଲ ଏବଂ ଫଳ ନିୟନ୍ତ୍ରଣ ପାଇଁ ପ୍ରୟୋଗ।",
+                nutrientSolutionTitle: "ପୋଷକ ଘୋଲ",
+                nutrientSolutionDesc: "ପ୍ରକୃତ ଅବସ୍ଥାରେ ଉତ୍ପାଦନ ବୃଦ୍ଧି କରିବା ପାଇଁ ପୋଷକ ରାସାୟନ।",
+                biopesticideTitle: "ଜୀବ ବିଷାକ୍ତ କୀଟନାଶକ",
+                biopesticideDesc: "ପରିବେଶ ପାଇଁ ନିରାପଦ ଏବଂ ଟିକାଉ କୀଟପ୍ରତିରୋଧ।",
+                pesticideTitle: "କୀଟନାଶକ",
+                pesticideDesc: "ଏକ ବ୍ୟାପକ ସ୍ପେକ୍ଟ୍ରମ୍ କୀଟନାଶକ ଯାହା ଫସଲକୁ ବିଭିନ୍ନ ପ୍ରକାରର କୀଟପତଙ୍ଗ ଏବଂ ରୋଗରୁ ରକ୍ଷା କରେ।",
+                soilAmendmentTitle: "ମାଟି ସୁଧାର",
+                soilAmendmentDesc: "ମାଟିର ଗଠନ, ଉର୍ବରତା ଏବଂ ମୋଟ ଫସଲ ଦ୍ୟୋତନୁ ସୁଧାର।",
+                aboutUsTitle: "ଅମ୍ଭେ ବିଷୟରେ",
+                aboutUsDesc: "ଲୋରେମ୍ ଇପସମ୍ ଡୋଲର୍ ସିଟ୍ ଆମେଟ୍ କଂସେକ୍ଟେଟୁର୍ ଆଡିପିସିସିଂ ଏଲିଟ୍।",
+                latestTweetTitle: "ନବୀନତମ ଟ୍ୱିଟ୍",
+                tweet1: "ଲୋରେମ୍ ଇପସମ୍ ଡୋଲର୍ ସିଟ୍ ଆମେଟ୍ କଂସେକ୍ଟେଟୁର୍ ଆଡିପିସିସିଂ ଏଲିଟ୍।",
+                tweet2: "ଲୋରେମ୍ ଇପସମ୍ ଡୋଲର୍ ସିଟ୍ ଆମେଟ୍ କଂସେକ୍ଟେଟୁର୍ ଆଡିପିସିସିଂ ଏଲିଟ୍।",
+                tweet3: "ଲୋରେମ୍ ଇପସମ୍ ଡୋଲର୍ ସିଟ୍ ଆମେଟ୍ କଂସେକ୍ଟେଟୁର୍ ଆଡିପିସିସିଂ ଏଲିଟ୍।",
+                memoryTitle: "ସ୍ମୃତି",
+                footerRegisterLink: "ପଞ୍ଜିକରଣ",
+                footerLoginLink: "ଲଗ୍ଇନ"
+            }
+        };
+
+        function changeLanguage() {
+            const selectedLang = document.getElementById("language").value;
+            const translation = translations[selectedLang];
+
+            Object.keys(translation).forEach(id => {
+                if (document.getElementById(id)) {
+                    document.getElementById(id).textContent = translation[id];
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
