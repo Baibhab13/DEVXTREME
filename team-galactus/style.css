@@ -1,0 +1,369 @@
+/* Custom scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+  width: 8px;  /* Width of the scrollbar */
+}
+
+/* Track (background of scrollbar) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light gray */
+  border-radius: 10px;
+}
+
+/* Scrollbar handle */
+::-webkit-scrollbar-thumb {
+  background: #1a73e8; /* Custom blue */
+  border-radius: 10px;
+}
+
+/* Scrollbar handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #135abe; /* Darker blue */
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1a73e8 #f1f1f1;
+}
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #111827;
+  overflow-x: hidden;
+}
+
+#navbar{
+  display: flex;
+  align-items: center;
+  height: 70px;
+  width: 100vw;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  height: 45px;
+  width: 40vw;
+}
+
+.logo h1{
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 38px;
+}
+.logo svg{
+  height: 35px;
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.nav-center{
+  display: flex;
+  align-items: center;
+  height: 45px;
+  width: 40vw;
+}
+
+.nav-elem{
+  padding: 10px;
+  margin-top: 17px;
+  margin-left: 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-elem:hover {
+  color: #1a73e8;
+}
+
+.nav-right{
+  display: flex;
+  align-items: center;
+  height: 45px;
+  width: 20vw;
+}
+
+/* button{
+  padding: 10px;
+  margin-top: 20px;
+  margin-right: 10px;
+
+} */
+
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.sign-in, .get-started {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.sign-in {
+  color: #1a73e8;
+  background: none;
+  /* border: 1px solid #1a73e8; */
+}
+
+.sign-in:hover {
+  /* background-color: #1a73e8; */
+  background-color: #eff6ff;
+  /* color: white; */
+}
+
+.get-started {
+  color: white;
+  background-color: #1a73e8;
+  border: none;
+}
+
+.get-started:hover {
+  background-color: #1557b0;
+}
+
+/* Scroll-to-top button */
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff758c;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;  /* Hidden by default */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+/* Show button when scrolled */
+.scroll-top.show {
+  display: block;
+  opacity: 1;
+}
+
+/* Hover effect */
+.scroll-top:hover {
+  background: #ff7eb3;
+}
+
+/* Smooth appearance */
+.scroll-top:active {
+  transform: scale(0.9);
+}
+
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  padding: 100px;
+  align-items: center;
+  background: #eef2ff;
+  height: 50vh;
+}
+
+.hero-text h1 {
+  font-size: 2.5em;
+  margin-left: 100px;
+}
+
+.hero p{
+  margin-left: 100px;
+  margin-bottom: 80px;
+  /* margin-right: 50px; */
+  padding-right: 100px;
+}
+
+.btn {
+  background: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-left: 100px;
+}
+
+.btn:hover {
+  background-color: #1557b0;
+}
+
+.hero-image {
+  width: 500px;
+  height: 300px;
+  background: linear-gradient(45deg, #ff7eb3, #ff758c, #f6e58d, #8dc6ff);
+  background-size: 300% 300%;
+  animation: gradientAnimation 6s infinite alternate;
+  border-radius: 10px;
+
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.why-choose, .how-it-works, .call-to-action {
+  padding: 4rem 5%;
+  text-align: center;
+}
+
+.why-choose h2, .how-it-works h2,.call-to-action h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.features-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature{
+  background-color: #f5f7fa;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon, .step-icon {
+  font-size: 2rem;
+  color: #1a73e8;
+  margin-bottom: 1rem;
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.how-it-works {
+  background: #eef2ff;
+  padding: 50px;
+  text-align: center;
+}
+
+.steps span {
+  margin: 10px;
+  display: inline-block;
+}
+
+
+.call-to-action {
+  background-color: #f5f7fa;
+}
+
+.get-started-btn {
+  background-color: #1a73e8;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 1rem 0;
+  transition: background-color 0.3s;
+}
+
+.get-started-btn:hover {
+  background-color: #1557b0;
+}
+
+/* footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 30px;
+} */
+
+footer {
+  background: #111827;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #1a73e8; /* Highlighting titles */
+}
+
+.footer-section p,
+.footer-section ul {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #1a73e8;
+}
+
+.social-links {
+  margin-top: 15px;
+}
+
+.social-links a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 18px;
+  transition: transform 0.3s ease, color 0.3s;
+}
+
+.social-links a:hover {
+  color: #1a73e8;
+  transform: scale(1.2);
+}
+
+.footer-copyright {
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.8;
+}
