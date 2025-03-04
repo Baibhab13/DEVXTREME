@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/nav.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=account_circle" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="deskNav">
+            <div>
+                <img src="/images/logo.png" alt="" height="80">
+            </div>
+            <div>
+                <form action="">
+                    <input type="search" name="" id="" placeholder="Search anything">
+                </form>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="register" id="register-link">Register</a></li>
+                    <li><a href="login" id="login-link">Log in</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn" id="services-btn">Services</button>
+                            <div class="dropdown-content">
+                                <a href="help" id="help-link">Help</a>
+                                <a href="scheme" id="scheme-link">Schemes</a>
+                                <a href="#" id="about-link">About</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="account"><span class="material-symbols-outlined">
+                                account_circle
+                            </span></a></li>
+                    <!-- Language Dropdown -->
+                    <li>
+                        <div class="dropdown">
+                            <select id="language" onchange="changeLanguage()">
+                                <option value="en">English</option>
+                                <option value="hi">हिंदी</option>
+                                <option value="or">ଓଡ଼ିଆ</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <nav class="mobNav">
+            <div class="logo">
+                <i class="fa-solid fa-bars navIcon"></i>
+                <a href="account.html"><span class="material-symbols-outlined">
+                        account_circle
+                    </span></a>
+            </div>
+            <div class="list closeNav">
+                <ul>
+                    <li><a href="register" id="register-link-mobile">Register</a></li>
+                    <li><a href="login" id="login-link-mobile">Log in</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn" id="services-btn-mobile">Services</button>
+                            <div class="dropdown-content">
+                                <a href="help" id="help-link-mobile">Help</a>
+                                <a href="scheme" id="scheme-link-mobile">Schemes</a>
+                                <a href="#" id="about-link-mobile">About</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Language Dropdown for Mobile -->
+                    <li>
+                        <select id="language-mobile" onchange="changeLanguage()">
+                            <option value="en">English</option>
+                            <option value="hi">हिंदी</option>
+                            <option value="or">ଓଡ଼ିଆ</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            <div class="left">
+                <p id="welcome-text">
+                    This web platform connects farmers and consumers for fair, transparent trade. Farmers list fresh produce, while consumers buy organic, locally grown goods. Secure payments, real-time tracking, and direct communication ensure seamless transactions. Supporting sustainable farming and ethical sourcing, it fosters trust, quality, and a healthier community through responsible agriculture.in hindi
+                </p>
+                <div class="btn">
+                    <a href="farmer" id="farmer-link">Continue as Farmer</a>
+                    <a href="consumer" id="consumer-link">Continue as Consumer</a>
+                </div>
+            </div>
+            <div class="right">
+                <img src="/images/vecteezy_a-basket-brimming-with-vegetables_44771696.png" alt="">
+            </div>
+        </main>
+    </header>
+
+    <script src="nav.js"></script>
+    <script>
+        const translations = {
+            en: {
+                welcomeText: "This web platform connects farmers and consumers for fair, transparent trade. Farmers list fresh produce, while consumers buy organic, locally grown goods. Secure payments, real-time tracking, and direct communication ensure seamless transactions. Supporting sustainable farming and ethical sourcing, it fosters trust, quality, and a healthier community through responsible agriculture.",
+                farmerLink: "Continue as Farmer",
+                consumerLink: "Continue as Consumer",
+                registerLink: "Register",
+                loginLink: "Log in",
+                servicesBtn: "Services",
+                helpLink: "Help",
+                schemeLink: "Schemes",
+                aboutLink: "About",
+            },
+            hi: {
+                welcomeText: "यह वेब प्लेटफॉर्म किसानों और उपभोक्ताओं को निष्पक्ष, पारदर्शी व्यापार के लिए जोड़ता है। किसान ताजा उपज सूचीबद्ध करते हैं, जबकि उपभोक्ता जैविक, स्थानीय उत्पाद खरीद सकते हैं। सुरक्षित भुगतान, रीयल-टाइम ट्रैकिंग और सीधा संचार लेन-देन को सहज बनाते हैं। यह सतत कृषि और नैतिक स्रोतों का समर्थन कर विश्वास, गुणवत्ता और स्वस्थ समुदाय को बढ़ावा देता है।",
+                farmerLink: "किसान के रूप में जारी रखें",
+                consumerLink: "उपभोक्ता के रूप में जारी रखें",
+                registerLink: "पंजीकरण करें",
+                loginLink: "लॉग इन करें",
+                servicesBtn: "सेवाएं",
+                helpLink: "सहायता",
+                schemeLink: "योजनाएं",
+                aboutLink: "हमारे बारे में",
+            },
+            or: {
+                welcomeText: "ଏହି ୱେବ୍ ପ୍ଲାଟଫର୍ମ କୃଷକ ଏବଂ ଉପଭୋକ୍ତାଙ୍କୁ ନ୍ୟାୟସଂଗତ ଏବଂ ପାରଦର୍ଶୀ ବ୍ୟବସାୟ ପାଇଁ ସଂଯୋଗ କରେ। କୃଷକମାନେ ତାଜା ଉତ୍ପାଦନ ତାଲିକାଭୁକ୍ତ କରନ୍ତି, ଏବଂ ଉପଭୋକ୍ତାମାନେ ସ୍ୱଦେଶୀ ଏବଂ ଜୈବିକ ପଦାର୍ଥ କ୍ରୟ କରିପାରିବେ। ସୁରକ୍ଷିତ ଅର୍ଥ ପ୍ରଦାନ, ତଥ୍ୟ ଅପଡେଟ୍ ଏବଂ ପ୍ରତ୍ୟକ୍ଷ ଯୋଗାଯୋଗ ଲେନଦେନ କୁ ସରଳ କରେ। ଏହା ସତତ କୃଷି ଏବଂ ନୈତିକ ଉତ୍ସକୁ ସମର୍ଥନ କରି, ବିଶ୍ୱାସ, ଗୁଣବତ୍ତା ଏବଂ ଏକ ସ୍ୱାସ୍ଥ୍ୟକର ସମୁଦାୟକୁ ଉନ୍ନତ କରେ।",
+                farmerLink: "କୃଷକ ଭାବରେ ଜାରି ରଖନ୍ତୁ",
+                consumerLink: "ଉପଭୋକ୍ତା ଭାବରେ ଜାରି ରଖନ୍ତୁ",
+                registerLink: "ପଞ୍ଜିକରଣ କରନ୍ତୁ",
+                loginLink: "ଲଗ୍ ଇନ୍ କରନ୍ତୁ",
+                servicesBtn: "ସେବାଗୁଡିକ",
+                helpLink: "ସହାୟତା",
+                schemeLink: "ଯୋଜନାଗୁଡିକ",
+                aboutLink: "ଆମ ବିଷୟରେ",
+            },
+        };
+
+        function changeLanguage() {
+            const selectedLanguage = document.getElementById('language').value || document.getElementById('language-mobile').value;
+            const translation = translations[selectedLanguage];
+
+            // Update the text content
+            document.getElementById('welcome-text').innerText = translation.welcomeText;
+            document.getElementById('farmer-link').innerText = translation.farmerLink;
+            document.getElementById('consumer-link').innerText = translation.consumerLink;
+
+            // Update navigation bar text
+            document.getElementById('register-link').innerText = translation.registerLink;
+            document.getElementById('login-link').innerText = translation.loginLink;
+            document.getElementById('services-btn').innerText = translation.servicesBtn;
+            document.getElementById('help-link').innerText = translation.helpLink;
+            document.getElementById('scheme-link').innerText = translation.schemeLink;
+            document.getElementById('about-link').innerText = translation.aboutLink;
+
+            // Update mobile navigation bar text
+            document.getElementById('register-link-mobile').innerText = translation.registerLink;
+            document.getElementById('login-link-mobile').innerText = translation.loginLink;
+            document.getElementById('services-btn-mobile').innerText = translation.servicesBtn;
+            document.getElementById('help-link-mobile').innerText = translation.helpLink;
+            document.getElementById('scheme-link-mobile').innerText = translation.schemeLink;
+            document.getElementById('about-link-mobile').innerText = translation.aboutLink;
+        }
+    </script>
+</body>
+
+</html>

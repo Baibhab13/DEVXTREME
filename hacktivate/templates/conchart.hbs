@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consumer Chat</title>
+  <link rel="stylesheet" href="/chart.css">
+  <style>
+    .self-message { text-align: right; color: blue; font-weight: bold; }
+    .received-message { text-align: left; color: black; }
+  </style>
+</head>
+<body>
+  <h1>Consumer Chat</h1>
+  <div id="chat">
+    <ul id="messages"></ul>
+  </div>
+  <form id="chat-form">
+    <input id="message-input" autocomplete="off" placeholder="Type a message..." />
+    <button type="submit">Send</button>
+  </form>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    // Join as a consumer
+    const consumer = { name: "Consumer Raj", role: "consumer" };
+    socket.emit("join", consumer);
+
+    const form = document.getElementById('chat-form');
+    const input = document.getElementById('message-input');
+    const messages = document.getElementById('messages');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (input.value) {
+        socket.emit('chat message', input.value);
+        input.value = '';
+      }
+    });
+
+    socket.on('chat message', (data) => {
+      const li = document.createElement('li');
+      li.textContent = `${data.sender}: ${data.message}`;
+      li.className = data.self ? "self-message" : "received-message";
+      messages.appendChild(li);
+    });
+  </script>
+</body>
+</html>

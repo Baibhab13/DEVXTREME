@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="login.css"> <!-- Link to your CSS file -->
+</head>
+
+<body>
+    <div class="container">
+        <!-- Left Aside Section -->
+        <div class="aside">
+            <h1>Welcome Back!</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, accusantium molestias? Quasi error officia sint esse rerum soluta a doloribus aspernatur.</p>
+            <div class="trueclller">
+                <img src="images/truecaller.png" alt="Truecaller Logo">
+                Login with Truecaller
+            </div>
+        </div>
+
+        <!-- Main Login Form Section -->
+        <div class="main">
+            <div class="blur">
+                <form action="/login" method="POST">
+                    <p>Please enter your login details</p>
+
+                    <!-- Role Selection Dropdown -->
+                    <select name="role" id="role" required>
+                        <option value="" disabled selected>Select Role</option>
+                        <option value="farmer">Farmer</option>
+                        <option value="consumer">Consumer</option>
+                    </select>
+
+                    <input type="text" placeholder="Enter Phone Number" name="phoneNumber" required>
+
+                    <input type="password" placeholder="Enter Password" name="password" required>
+
+                    <span>Forgot <b style="color: #017d03;">password?</b></span>
+
+                    <input type="submit" value="Log in">
+
+                    <small>Don't have an account? <a href="register">Register</a></small>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

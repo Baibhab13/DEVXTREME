@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #017d03;
+}
+
+header nav form input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    width: 350px;
+    border-radius: 5px;
+}
+
+header nav ul {
+    display: flex;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    border: none;
+    background: #017d03;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #154716;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #fff;
+}
+
+.dropdown-content a:hover {
+    background-color: #19191e;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Mobile Navigation Styles */
+.mobNav {
+    background: #017d03;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+.mobNav .logo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mobNav .logo i,
+.mobNav .logo a {
+    color: #fff;
+    font-size: 25px;
+}
+
+.mobNav .list ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobNav .closeNav {
+    display: none;
+}
+
+.closeIco {
+    display: none;
+}
+
+/* Responsive Navigation Styles */
+@media (max-width: 972px) {
+    .deskNav {
+        display: none;
+    }
+
+    .mobNav {
+        display: block;
+    }
+}
