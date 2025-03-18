@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediConnect - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">MediConnect</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#service">Services</a></li>
+            <li><a href="doctor-consultation.html" target="_blank">Appointments</a></li>
+            <li><a href="store.html" target="_blank">Medicines</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="signup.html" target="_blank">Sign Up</a></li>
+            <li><a href="login.html" target="_blank">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome To <span>MediConnect</span></h1>
+            <p>Your Health, Our Priority: Streamline Appointments, Tickets, and Medicines in Just a Few Clicks!</p>
+            <a href="signup.html" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="service">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="card">
+                <i class="fas fa-ticket-alt"></i>
+                <h3><a href="book.html" target="_blank">Book Your Ticket</a></h3>
+                <p>Book your ticket to check offline by visiting the medical.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-user-md"></i>
+                <h3><a href="doctor-consultation.html" target="_blank">Doctor Consultation</a></h3>
+                <p>Book a virtual or in-person appointment with doctors anytime.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-stethoscope"></i>
+                <h3><a href="chatbot.html" target="_blank">Symptom Checker</a></h3>
+                <p>Enter symptoms to get an idea of possible conditions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-box">
+                <p><strong>At <span class="highlight">MediConnect</span></strong>, we are dedicated to bridging the gap between patients and healthcare facilities by providing smart solutions for common challenges in government medical centers.</p>
+                <p>Our platform aims to streamline patient flow, enhance doctor availability, and ensure adequate medicine supplies through an intuitive and user-friendly interface.</p>
+                <p>We believe in leveraging technology to <strong>improve healthcare accessibility and efficiency.</strong> Our system offers real-time updates, appointment scheduling, and a symptom checker to guide patients toward the right medical assistance.</p>
+                <p>Join us in revolutionizing the healthcare experience because everyone deserves <strong>seamless and reliable medical care.</strong></p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form action="#" method="post" class="contact-form">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 MediConnect. All rights reserved.</p>
+    </footer>
+</body>
+</html>

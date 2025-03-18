@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Receipt</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Appointment Confirmed ✅</h2>
+        <p><strong>Specialty:</strong> <span id="specialty">Cardiology</span></p>
+        <p><strong>Date:</strong> <span id="date">04/03/2025</span></p>
+        <p><strong>Location:</strong> <span id="location">Berhampur</span></p>
+        <p><strong>Paid Amount:</strong> ₹<span id="amount"> 500</span></p>
+        <p>Thank you for booking! A confirmation email has been sent.</p>
+        <button onclick="window.print()">Print Receipt</button>
+    </div>
+
+    <!-- <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById("specialty").innerText = urlParams.get("specialty");
+        document.getElementById("date").innerText = urlParams.get("date");
+        document.getElementById("location").innerText = urlParams.get("location");
+        document.getElementById("amount").innerText = urlParams.get("amount");
+    </script> -->
+</body>
+</html>

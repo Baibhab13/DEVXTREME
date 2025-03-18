@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Doctor - MediConnect</title>
+    <link rel="stylesheet" href="doctor-consultation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">MediConnect</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Find the Right Doctor for Your Needs</h1>
+        <p>Search specialists and book an appointment with ease.</p>
+    </header>
+
+    <!-- Specialties Section -->
+    <section class="specialties">
+        <h2>Browse by Specialties</h2>
+        <div class="specialties-grid">
+            <div class="specialty">
+                <i class="fas fa-user-md"></i>
+                <span>General Physician</span>
+            </div>
+            <div class="specialty">
+                <i class="fa-solid fa-face-smile"></i>
+                <span>Dermatology</span>
+            </div>
+            <div class="specialty">
+                <i class="fas fa-heartbeat"></i>
+                <span>Cardiology</span>
+            </div>
+            <div class="specialty">
+                <i class="fas fa-brain"></i>
+                <span>Neurology</span>
+            </div>
+            <div class="specialty">
+                <i class="fas fa-child"></i>
+                <span>Pediatrics</span>
+            </div>
+        </div>
+        <div class="specialties-grid">
+            <div class="specialty">
+                <i class="fas fa-lungs"></i>
+                <span>Pulmonology</span>
+            </div>
+            <div class="specialty">
+                <i class="fas fa-eye"></i>
+                <span>Ophthalmology</span>
+            </div>
+            <div class="specialty">
+                <i class="fas fa-tooth"></i>
+                <span>Dentistry</span>
+            </div>
+            <div class="specialty">
+                <i class="fas fa-bone"></i>
+                <span>Orthopedics</span>
+            </div>
+            <div class="specialty">
+                <i class="fas fa-dna"></i>
+                <span>Oncology</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2>Find a Doctor in <span class="highlight">3 Easy Steps</span></h2>
+        <p>Select a specialty, choose a date, and enter your preferred location.</p>
+
+        <div class="search-form">
+            <!-- Speciality Dropdown -->
+            <div class="form-group">
+                <label for="specialty">Select Specialty*</label>
+                <select id="specialty">
+                    <option value="" disabled selected>Enter Speciality</option>
+                    <option value="cardiology">Cardiology</option>
+                    <option value="neurology">Neurology</option>
+                    <option value="dermatology">Dermatology</option>
+                    <option value="orthopedics">Orthopedics</option>
+                    <option value="pediatrics">Pediatrics</option>
+                </select>
+            </div>
+
+            <!-- Date Picker -->
+            <div class="form-group">
+                <label for="date">Select Date*</label>
+                <input type="date" id="date">
+            </div>
+
+            <!-- Location Input -->
+            <div class="form-group">
+                <label for="location">Preferred Location/Pincode*</label>
+                <input type="text" id="location" placeholder="Search location">
+            </div>
+
+            <!-- Submit Button -->
+            <a href="payment.html"><button href="payment.html" class="submit-btn" onclick="searchDoctor()">Submit</button></a>
+        </div>
+    </div>
+
+     <!-- Chatbot Button -->
+     <div class="chatbot-container">
+        <div id="chat-icon" onclick="toggleChat()">
+            💬
+        </div>
+        <div id="chatbox" class="hidden">
+            <div class="chat-header">
+                <span>Chat with Us</span>
+                <!-- <button id="close-chat" onclick="toggleChat()">✖</button> -->
+            </div>
+            <div class="chat-body" id="chat-body">
+                <p class="bot-message">Hello! How can I assist you today?</p>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chat-input" placeholder="Type a message...">
+                <button  onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+        <script src="script.js"></script>
+</body>
+</html>
