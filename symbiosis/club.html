@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: linear-gradient(90deg, #426aed, #e2e2e2);
+            /* background-image:
+            repeating-linear-gradient(
+                to right, transparent 0 100px,
+                #25283b22 100px 101px
+            ),
+            repeating-linear-gradient(
+                to bottom, transparent 0 100px,
+                #25283b22 100px 101px
+            ); */
+        }
+        
+        body::before{
+            position: absolute;
+            width: min(1400px, 90vw);
+            top: 10%;
+            left: 50%;
+            height: 90%;
+            transform: translateX(-50%);
+            content: '';
+            /* background-image: url(images/bg.png); */
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: top center;
+            pointer-events: none;
+        }
+    </style>
+    <link rel="stylesheet" href="club.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+          <a href="main.html"><img src="socialbook_img/images/logo.png" class="logo" /></a>
+          <ul>
+            <li><img src="socialbook_img/images/notification.png" /></li>
+            <li><img src="socialbook_img/images/inbox.png" /></li>
+            <li><img src="socialbook_img/images/video.png" /></li>
+          </ul>
+        </div>
+        <div class="nav-right">
+          <div class="search-box">
+            <img src="socialbook_img/images/search.png" alt="" />
+            <input type="text" placeholder="Search" />
+          </div>
+          <div class="nav-user-icon online" onclick="settingsMenuToggle()">
+            <img src="socialbook_img/images/profile-pic.png" alt="" />
+          </div>
+        </div>
+  
+        <!-- seeting menu -->
+  
+        <div class="settings-menu">
+          <div id="dark-btn">
+            <span></span>
+          </div>
+  
+          <div class="seeting-menu-inner">
+            <div class="user-profile">
+              <img src="socialbook_img/images/profile-pic.png" />
+              <div>
+                <p>Asaman Pal</p>
+                <a href="profile.html">See Your Profile</a>
+              </div>
+            </div>
+            <hr />
+            <div class="user-profile">
+              <img src="socialbook_img/images/feedback.png" />
+              <div>
+                <p>Give Feedback</p>
+                <a href="#">Help us to Improve</a>
+              </div>
+            </div>
+            <hr />
+  
+            <div class="settings-links">
+              <img
+                src="socialbook_img/images/setting.png"
+                class="settings-icon"
+              />
+              <a href="#"
+                >Settings & Privacy
+                <img src="socialbook_img/images/arrow.png" width="10px"
+              /></a>
+            </div>
+            <div class="settings-links">
+              <img src="socialbook_img/images/help.png" class="settings-icon" />
+              <a href="#"
+                >Help & Support
+                <img src="socialbook_img/images/arrow.png" width="10px"
+              /></a>
+            </div>
+            <div class="settings-links">
+              <img
+                src="socialbook_img/images/display.png"
+                class="settings-icon"
+              />
+              <a href="#"
+                >Display & Accessibility
+                <img src="socialbook_img/images/arrow.png" width="10px"
+              /></a>
+            </div>
+            <div class="settings-links">
+              <img src="socialbook_img/images/logout.png" class="settings-icon" />
+              <a href="#"
+                >Logout<img src="socialbook_img/images/arrow.png" width="10px"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <div class="banner">
+        <div class="slider" style="--quantity: 10">
+            <div class="item" style="--position: 1"><img src="clubimg\img1.jpg" alt=""></div>
+            <div class="item" style="--position: 2"><img src="clubimg\img2.jpg" alt=""></div>
+            <div class="item" style="--position: 3"><img src="clubimg\img3.jpg" alt=""></div>
+            <div class="item" style="--position: 4"><img src="clubimg\img4.jpg" alt=""></div>
+            <div class="item" style="--position: 5"><img src="clubimg\img5.jpg" alt=""></div>
+            <div class="item" style="--position: 6"><img src="clubimg\img6.jpg" alt=""></div>
+            <div class="item" style="--position: 7"><img src="clubimg\img7.jpg" alt=""></div>
+            <div class="item" style="--position: 8"><img src="clubimg\img8.jpg" alt=""></div>
+            <div class="item" style="--position: 9"><img src="clubimg\img9.jpg" alt=""></div>
+            <div class="item" style="--position: 10"><img src="clubimg\img10.jpg" alt=""></div>
+        </div>
+        <div class="content">
+            <h1 data-content="CDD CLUB">
+                CDD CLUB
+            </h1>
+            <div class="author">
+                <h2>Ashu</h2>
+                <p><b>Secretary</b></p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, dolores.
+                </p>
+                
+            </div>
+            <div class="model"></div>
+        </div>
+        <button class="btn"><a href="club-mem-pro.html">See More</a></button>
+    </div>
+    
+    
+</body>
+</html>
